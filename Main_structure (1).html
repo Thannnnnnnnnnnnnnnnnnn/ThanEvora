@@ -1,0 +1,403 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="logo nga.png" type="image/x-icon">
+    <title>Vehicle Reservation - BSIT - 22022</title>
+    <link rel="stylesheet" href="style_ni_junatan.css">
+    
+</head>
+<style>
+    body {
+    font-family: Arial, sans-serif;
+    background-color: skyblue;
+    margin: 0;
+    padding: 0;
+}
+.logo {
+    width: 100px;
+    position: absolute;
+    left: 29%;
+    top: 0;
+}
+header {
+    position: relative;
+    color: white;
+    text-align: center;
+    padding: 15px;
+}
+.container {
+    position: relative;
+    top: 10rem;
+    left: 28%;
+    width: 500px;
+    padding: 20px;
+    border: 1px solid black;
+    border-radius: 10px;
+    background-color: whitesmoke;
+    text-align: center;
+    margin: px;
+    height: 230px;
+    opacity: 0;
+    /* Initial opacity set to 0 */
+    animation: fadeIn 2s ease forwards;
+    /* Animation added */
+    box-shadow: 5px 10px black;
+}
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        /* Start from opacity 0 */
+        transform: translateY(20px);
+        /* Initial position below */
+    }
+    to {
+        opacity: 1;
+        /* End at opacity 1 */
+        transform: translateY(0);
+        /* Final position at center */
+    }
+}
+.container h2 {
+    margin: 0;
+    margin-bottom: 5rem;
+}
+.form-container {
+    text-align: left;
+}
+.form-container label {
+    display: block;
+    margin-top: 10px;
+    font-weight: bold;
+}
+.form-container input[type="text"],
+.form-container input[type="password"],
+.form-container input[type="email"] {
+    width: 94%;
+    padding: 10px;
+    margin: 0 8px;
+    display: block;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+}
+.form-container input[type="submit"] {
+    background-color: blueviolet;
+    color: #fff;
+    border: none;
+    border-radius: 3px;
+    padding: px;
+    cursor: pointer;
+    width: 60%;
+    display: block;
+    margin: 10px auto;
+}
+.form-container input[type="submit"]:hover {
+    background-color: skyblue;
+}
+.error {
+    color: red;
+}
+.wave {
+    background: rgb(255 255 255 / 25%);
+    border-radius: 1000% 1000% 0 0;
+    position: fixed;
+    width: 200%;
+    height: 12em;
+    animation: wave 10s -3s linear infinite;
+    transform: translate3d(0, 0, 0);
+    opacity: 0.8;
+    bottom: 0;
+    left: 0;
+    z-index: -1;
+}
+.wave:nth-of-type(2) {
+    bottom: -1.25em;
+    animation: wave 18s linear reverse infinite;
+    opacity: 0.8;
+}
+.wave:nth-of-type(3) {
+    bottom: -2.5em;
+    animation: wave 20s -1s reverse infinite;
+    opacity: 0.9;
+}
+@keyframes wave {
+    2% {
+        transform: translateX(1);
+    }
+    25% {
+        transform: translateX(-25%);
+    }
+    50% {
+        transform: translateX(-50%);
+    }
+    75% {
+        transform: translateX(-25%);
+    }
+    100% {
+        transform: translateX(1);
+    }
+    
+}
+.back-to-home-button2 {
+    background-color: blueviolet;
+    color: white;
+}
+
+.back-to-home-button:hover, .back-to-home-button2:hover, #register-button:hover {
+    background-color: #85c1fd;
+}
+.back-to-home-button, .back-to-home-button2 {
+    display: block;
+    width: 200px;
+    margin: 0 auto;
+    padding: 10px 0;
+    text-align: center;
+    text-decoration: none;
+    border-radius: 10px;
+    transition: background-color 0.3s ease;
+}
+
+
+
+</style>
+<body>
+    <div>
+        <div class="wave"></div>
+        <div class="wave"></div>
+        <div class="wave"></div>
+     </div>
+    <div class="container1">
+        <div class="reservation-form">
+            <h2>Vehicle Reservation</h2>
+            <form id="registration-form">
+                <div class="form-group">
+                    <label for="Registrationno">Reservation No.</label>
+                    <input type="text" id="Registrationno" name="Registrationno" placeholder="ex. #00001" required>
+                </div>
+                <div class="form-group">
+                    <label for="driver-name">Driver's name</label>
+                    <input type="text" id="driver-name" name="driver-name" placeholder="ex. Than" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="vehicle-type">Type of Vehicle</label>
+                    <select id="vehicle-type" name="vehicle-type">
+                        <option value="N/A">Choose</option>
+                        <option value="2 Wheel">2 Wheel</option>
+                        <option value="4 Wheel">4 Wheel</option>
+                        
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="color">Vehicle Color</label>
+                    <input type="text" id="color" name="color" required placeholder="Enter vehicle color">
+                </div>
+                
+
+                <div class="form-group">
+                    <label for="brand">Vehicle Brand</label>
+                    <select id="brand" name="brand">
+                        <option value="N/A">Choose</option>
+                        <option value="toyota">Toyota</option>
+                        <option value="nissan">Nissan</option>
+                        <option value="suzuki">Suzuki</option>
+                        <option value="honda">Honda</option>
+                        <option value="hyundai">Hyundai</option>
+                        <option value="ford">Ford</option>
+                        <option value="kia">Kia</option>
+                        <option value="isuzu">Isuzu</option>
+                        <option value="lexus">Lexus</option>
+                        <option value="fortuner">Fortuner</option>
+                        <option value="bmw">BMW</option>
+                        <option value="hilux">Hilux</option>
+                        <option value="subaru">Subaru</option>
+                        <option value="other">other</option>
+                    </select>
+                </div>
+            </div>         
+
+        <div class="reservation-lot">
+            <div class="form-group">
+                <label for="parking-slot-1st-floor">Parking Slot</label>
+                <select id="parking-slot-1st-floor" name="parking-slot-1st-floor">
+                    <option value="N/A">Choose</option>
+                    <option value="A-1">Slot 1</option>
+                    <option value="A-1">Slot 2</option>
+                    <option value="A-1">Slot 3</option>
+                    <option value="A-1">Slot 4</option>
+                    <option value="A-1">Slot 5</option>
+                    <option value="A-1">Slot 6</option>
+                    <option value="A-1">Slot 7</option>
+                    <option value="A-1">Slot 8</option>
+                    <option value="A-1">Slot 9</option>
+                    <option value="A-1">Slot 10</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label for="parking-plate">Plate Number</label>
+                <input type="text" id="parking-plate" name="parking-plate" placeholder="ex: AAA-1234">
+            </div>
+
+            <div class="form-group">
+                <label for="duration">Duration (hours)</label>
+                <input type="number" id="duration" name="duration" placeholder="Enter duration in hours">
+            </div>
+
+            <div class="form-group">
+                <label for="date">Date</label>
+                <input type="date" id="date" name="date">
+            </div>
+
+            <!-- Add a hidden input for time-in -->
+            <input type="hidden" id="time-in" name="time-in">
+
+            <button type="button" id="register-button">Print Receipt</button>
+            <br>
+            <a class="back-to-home-button" href="login.html">Cancel</a>
+        </form>
+    </div>  
+    </div>
+    
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <hr>
+    <font color="black" face="calibri" size="2">
+        <center>BSIT - 22022 © 2024</center>
+    </font>
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+    const registrationForm = document.getElementById("registration-form");
+    const parkingSlot1stFloor = document.getElementById("parking-slot-1st-floor");
+    const parkingSpaces = document.getElementById("parking-spaces");
+
+    function getCurrentTime() {
+        const now = new Date();
+        let hours = now.getHours();
+        const minutes = now.getMinutes().toString().padStart(2, '0');
+        let ampm = 'AM';
+
+        if (hours >= 12) {
+            ampm = 'PM';
+        }
+
+        if (hours > 12) {
+            hours -= 12;
+        }
+
+        return `${hours}:${minutes} ${ampm}`;
+    }
+
+    document.getElementById("register-button").addEventListener("click", function () {
+        if (validateForm()) {
+            const Registrationno = registrationForm.elements["Registrationno"].value;
+            const driverName = registrationForm.elements["driver-name"].value;
+            const vehicleType = registrationForm.elements["vehicle-type"].value;
+            const colorInput = registrationForm.elements["color"];
+            const vehicleColor = colorInput.value;
+            const vehicleBrand = registrationForm.elements["brand"].value;
+            const parkingSlot1stFloorValue = parkingSlot1stFloor.value;
+            const parkingPlate = registrationForm.elements["parking-plate"].value;
+
+            let duration = parseInt(registrationForm.elements["duration"].value);
+            duration = Math.min(duration, 24);
+
+            const timeIn = getCurrentTime();
+            const timeOut = calculateTimeOut(timeIn, duration);
+            const date = registrationForm.elements["date"].value;
+    
+            const defaultAddress = getDefaultAddress();
+
+            const resultMessage = `
+                ******************************************
+                Reservation No.: ${Registrationno}
+                ******************************************
+                Name: ${driverName}
+                Vehicle Type: ${vehicleType}
+                Color: ${vehicleColor}
+                Brand: ${vehicleBrand}
+                ******************************************
+                Parking Slot: ${parkingSlot1stFloorValue}
+                Parking Plate: ${parkingPlate}
+                ******************************************
+                Duration (hours): ${duration}
+                Date: ${date}
+                Time In: ${timeIn}
+                Time Out: ${timeOut}
+                ******************************************
+                Vehicle Reservation Management Contact
+                Address: ${defaultAddress.address}
+                Phone: ${defaultAddress.phone}
+                Email: ${defaultAddress.email}
+            `;
+
+            // Display result message as an alert
+            alert(resultMessage);
+
+            // Reset the form
+            registrationForm.reset();
+        }
+    });
+
+    function validateForm() {
+        const requiredFields = document.querySelectorAll('#registration-form [required]');
+        for (const field of requiredFields) {
+            if (!field.value) {
+                alert(`Please fill out all the required fields`);
+                return false;
+            }
+        }
+        return true;
+    }
+
+    function getDefaultAddress() {
+        return {
+            address: "1071 Bgy. Kaligayahan,Quirino Highway, Novaliches, 1422 Quezon City, Philippines.",
+            phone: "09270726974",
+            email: "22022_Support@gmail.com"
+        };
+    }
+
+    function calculateTimeOut(timeIn, duration) {
+        const currentDate = new Date();
+        const timeInDate = new Date(`${currentDate.getFullYear()}-${currentDate.getMonth() + 1}-${currentDate.getDate()} ${timeIn}`);
+        const timeOutDate = new Date(timeInDate.getTime() + duration * 60 * 60 * 1000);
+        const hours = timeOutDate.getHours();
+        const minutes = timeOutDate.getMinutes().toString().padStart(2, '0');
+        const ampm = hours >= 12 ? 'PM' : 'AM';
+        return `${hours > 12 ? hours - 12 : hours}:${minutes} ${ampm}`;
+    }
+});
+</script>
+
+  
+    
+    
+</body>
+</html>
